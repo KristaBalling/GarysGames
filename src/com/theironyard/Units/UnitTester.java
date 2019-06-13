@@ -40,4 +40,16 @@ package com.theironyard.Units;
                         expectedOutputValue);
             }
         }
+
+        public void test4(Unit unit, String propertyName) {
+            System.out.println(
+                    "\nTesting getting a non-existent property's value.");
+            try {
+                Object outputValue = unit.getProperty(propertyName);
+            } catch (RuntimeException e) {
+                System.out.println("Test passed.");
+                return;
+            }
+            System.out.println("Test failed.");
+        }
     }
