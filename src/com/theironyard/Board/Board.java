@@ -28,7 +28,7 @@ public class Board {
     }
 
     public Tile getTile(int x, int y) {
-        return (Tile) ((ArrayLIst)tiles.get(x-1)).get(y-1);
+        return (Tile) ((ArrayList)tiles.get(x-1)).get(y-1);
     }
 
     public void addUnit(Unit unit, int x, int y) {

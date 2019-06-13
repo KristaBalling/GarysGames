@@ -13,18 +13,31 @@ public class Unit {
     private List weapons;
     private Map properties;
 
-    public Unit(int id){
+    public Unit(int id) {
         this.id = id;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    //getName() and setName() methods
-    //getType() and setType() methods
+    public String getName() {
+        return name;
+    }
 
-    public void addWeapon (Weapon weapon) {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void addWeapon(Weapon weapon) {
         if (weapons == null) {
             weapons = new LinkedList();
         }
@@ -44,8 +57,18 @@ public class Unit {
 
     public Object getProperty(String property) {
         if (properties == null) {
-            return null;
+            throw new RuntimeException(
+                    "No properties for this unit.");
         }
-        return properties.get(property);
+
+        Object value = properties.get(property);
+        if (value == null) {
+            throw new RuntimeException(
+                    "Request for non-existent property.");
+        } else {
+            return value;
+        }
     }
 }
+
+

@@ -17,7 +17,7 @@ package com.theironyard.Units;
 
         public void testUnitSpecificProperty(Unit unit, String propertyName,
                                              Object inputValue, Object expectedOutputValue) {
-            System.out.println("\Testing setting/getting a unit-specific property.");
+            System.out.println("Testing setting/getting a unit-specific property.");
             unit.setProperty(propertyName, inputValue);
             Object outputValue = unit.getProperty(propertyName);
             if (expectedOutputValue.equals(outputValue)) {
